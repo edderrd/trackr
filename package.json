@@ -1,0 +1,45 @@
+{
+  "name": "trackr",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "concurrently --kill-others \"nodemon --quiet --exec node .\" \"cd client; npm run dev\"",
+    "watch": "npm run dev",
+    "start": "nodemon --exec node .",
+    "serve": "npm run start",
+    "server": "npm run start",
+    "posttest": "npm run lint && nsp check"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "dotenv": "^5.0.1",
+    "helmet": "^3.10.0",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^5.0.0",
+    "loopback-connector-mongodb": "^3.4.3",
+    "loopback-connector-rest": "^3.1.1",
+    "loopback-console": "^1.1.0",
+    "nodemon": "^1.17.4",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^2.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "nsp": "^2.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "trackr"
+}

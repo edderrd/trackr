@@ -1,0 +1,53 @@
+{
+  "name": "service",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "settings": {
+      "type": "object"
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "timeEntries": {
+      "type": "hasMany",
+      "model": "TimeEntry",
+      "foreignKey": "serviceId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {
+    "prototype.projects": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "projects",
+          "type": "array",
+          "root": true,
+          "description": "projects"
+        }
+      ],
+      "description": "list of projects in a service",
+      "http": [
+        {
+          "path": "/projects",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

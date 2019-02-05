@@ -1,0 +1,33 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "trackr",
+    "password": "",
+    "name": "db",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "OpenProjectService": {
+    "name": "OpenProjectService",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://project.flexentialps.com/api/v3/time_entries",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "functions": {
+            "timeEntries": [
+              "filter"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

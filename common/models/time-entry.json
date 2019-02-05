@@ -1,0 +1,52 @@
+{
+  "name": "TimeEntry",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "comment": {
+      "type": "string",
+      "required": true
+    },
+    "serviceId": {
+      "type": "string",
+      "required": true
+    },
+    "spentOn": {
+      "type": "date",
+      "required": true
+    },
+    "hours": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "sourceId": {
+      "type": "string",
+      "required": true
+    },
+    "project": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "service": {
+      "type": "belongsTo",
+      "model": "service",
+      "foreignKey": "serviceId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
